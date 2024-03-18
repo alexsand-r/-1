@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="stylesheet" href="css/style.css">
+<title>Комуналка калькулятор</title>
+</head>
+    <body>
+        <div class="wrapper">
+        <header class="header">
+      
+        </header>
+            <main class="page">
+                <div class="page__block block">
+                    <div class="block__container">
+                        <div class="block__body">
+                            <h1>Калькулятор комунальних послуг</h1>
+                            <div class="block__content">
+                                <!--  -->
+                                <div class="block-gaz">
+                                    <div class="block-gaz__title">газ</div>
+                                    <form action="" class="block-gaz__line">
+                                        <div class="block-gaz__line">
+                                            <label  for="gaz-start" class="block-gaz__label">Введіть показники газового лічильника на <span>кінець</span>  періоду</label>
+                                            <input data-gaz-start="" id="gaz-start" required autocomplete="off" type="text" name="gaz-start" class="block-gaz__input">
+                                        </div>
+                                        <div class="block-gaz__line">
+                                            <label for="gaz-end" class="block-gaz__label">Введіть показники газового лічильника на <span>початок</span>
+                                            періоду</label>
+                                            <input data-gaz-end="" id="gaz-end" required autocomplete="off" type="text" name="gaz-end" class="block-gaz__input">
+                                        </div>
+                                        
+                                        <div class="block-gaz__line">
+                                            <label for="gaz-price" class="block-gaz__label">Введіть ціну за 1 м куб газа</label>
+                                            <input data-gaz-price="" id="gaz-price" required autocomplete="off" type="text" name="gaz-price" class="block-gaz__input">
+                                        </div>
+                                        <button data-btn-gaz="" type="button" class="block-gaz__btn" onclick="getValueGaz()">Розрахувати</button>
+                                        <div class="block-gaz__line">
+                                            <p>Витрати газу м. куб</p>
+                                            <div data-gaz-rez="" id="gaz-rez" class="block-gaz__result"></div>
+                                        </div>
+                                        <p>Вартість газу</p>
+                                        <div data-gaz-total="" id="gaz-total" class="block-gaz__result"></div>
+                                    </form>
+                                  
+                                </div>
+                                <!-- світло -->
+                                <div class="block-gaz">
+                                    <div class="block-gaz__title">світло</div>
+                                    <form action="" class="block-gaz__line">
+                                        <div class="block-gaz__line">
+                                            <label for="light-start" class="block-gaz__label">Введіть показники електричного лічильника на
+                                                <span>кінець</span> періоду</label>
+                                            <input data-light-start="" id="light-start" required autocomplete="off" type="text" name="light-start"
+                                                class="block-gaz__input">
+                                        </div>
+                                        <div class="block-gaz__line">
+                                            <label for="light-end" class="block-gaz__label">Введіть показники  лічильника на <span>початок</span>
+                                                періоду</label>
+                                            <input data-light-end="" id="light-end" required autocomplete="off" type="text" name="light-end"
+                                                class="block-gaz__input">
+                                        </div>
+                                
+                                        <div class="block-gaz__line">
+                                            <label for="light-price" class="block-gaz__label">Введіть ціну за 1 кв</label>
+                                            <input data-light-price="" id="light-price" required autocomplete="off" type="text" name="light-price"
+                                                class="block-gaz__input">
+                                        </div>
+                                        <button data-btn-light="" type="button" class="block-gaz__btn" onclick="getValueLight()">Розрахувати</button>
+                                        <div class="block-gaz__line">
+                                            <p>Витрати кв електричної енергії</p>
+                                            <div data-light-rez="" id="light-rez" class="block-gaz__result"></div>
+                                        </div>
+                                        <p>Вартість електричної енергії</p>
+                                        <div data-light-total="" id="light-total" class="block-gaz__result"></div>
+                                    </form>
+                                
+                                </div>
+                                <!-- водопостачання -->
+                               <div class="block-gaz">
+                                    <div class="block-gaz__title">водопостачання</div>
+                                    <form action="" class="block-gaz__line">
+                                        <div class="block-gaz__line">
+                                            <label for="water-start" class="block-gaz__label">Введіть показники  лічильника води на
+                                                <span>кінець</span> періоду</label>
+                                            <input data-water-start="" id="water-start" required autocomplete="off" type="text" name="water-start"
+                                                class="block-gaz__input">
+                                        </div>
+                                        <div class="block-gaz__line">
+                                            <label for="water-end" class="block-gaz__label">Введіть показники лічильника води на <span>початок</span>
+                                                періоду</label>
+                                            <input data-water-end="" id="water-end" required autocomplete="off" type="text" name="water-end"
+                                                class="block-gaz__input">
+                                        </div>
+                                
+                                        <div class="block-gaz__line">
+                                            <label for="water-price" class="block-gaz__label">Введіть ціну за 1 м куб води</label>
+                                            <input data-water-price="" id="gaz-price" required autocomplete="off" type="text" name="water-price"
+                                                class="block-gaz__input">
+                                        </div>
+                                        <button data-btn="" type="button" class="block-gaz__btn" onclick="getValueWater()">Розрахувати</button>
+                                        <div class="block-gaz__line">
+                                            <p>Витрати води м. куб</p>
+                                            <div data-water-rez="" id="gaz-rez" class="block-gaz__result"></div>
+                                        </div>
+                                        <p>Вартість води *</p>
+                                        <div data-water-total="" id="gaz-total" class="block-gaz__result"></div>
+                                    </form>
+                                    <p>* з урахуванням 18,20 грн </p>
+                                </div> 
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        <footer class="footer">
+     
+        </footer>
+        </div>
+    <script src="js/script.js"></script>
+    </body>
+</html>
+
